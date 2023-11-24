@@ -15,19 +15,16 @@
   justify-content: space-between;
   align-items: center;
   padding: 20px 0;
-  width: 90%;
-  margin-inline: auto;
-  max-width: 1150px;
 }
 
 /* NavbarLinks */
 .navbar-nav {
   background-color: #fff;
   position: absolute;
-  top: 76px;
+  top: 80px;
   left: 0;
   width: 100%;
-  height: calc(100vh - 76px);
+  height: calc(100vh - 80px);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -49,8 +46,8 @@
 }
 
 .nav-link {
-  color: var(--dark-green);
   transition: 0.25s ease;
+  color: var(--dark-green);
 }
 
 .nav-link:hover {
