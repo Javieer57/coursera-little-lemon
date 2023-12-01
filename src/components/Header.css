@@ -17,6 +17,10 @@
   padding: 20px 0;
 }
 
+.navbar-wrapper img {
+  width: 150px;
+}
+
 /* NavbarLinks */
 .navbar-nav {
   background-color: #fff;
