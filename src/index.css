@@ -79,3 +79,17 @@ button {
   width: 20px;
   height: 20px;
 }
+
+main {
+  margin-top: 80px;
+}
+
+main > section:not(:last-child) {
+  margin-bottom: 80px;
+}
+
+@media (min-width: 1024px) {
+  main {
+    margin-top: 110px;
+  }
+}
