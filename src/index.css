@@ -45,7 +45,7 @@ button {
   position: relative;
   width: 90%;
   max-width: 1150px;
-  margin: auto;
+  margin-inline: auto;
 }
 
 .btn {
@@ -82,6 +82,7 @@ button {
 
 main {
   margin-top: 80px;
+  margin-bottom: 80px;
 }
 
 main > section:not(:last-child) {
