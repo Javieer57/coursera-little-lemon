@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 50px;
-  padding: 50px 0 0;
+  padding: 120px 0 0;
 }
 
 .hero-left {
@@ -49,16 +49,11 @@
   border-radius: 16px;
 }
 
-@media (min-width: 450px) {
-  .hero .btn {
-    margin: 0;
-  }
-}
-
 @media (min-width: 1024px) {
   .hero {
     grid-template-columns: 1fr 1fr;
     align-items: center;
+    padding: 150px 0 0;
   }
 
   .hero-left {
