@@ -56,6 +56,10 @@
     padding: 150px 0 0;
   }
 
+  .hero .btn {
+    margin: 0;
+  }
+
   .hero-left {
     text-align: left;
   }
