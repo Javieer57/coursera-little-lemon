@@ -1,5 +1,7 @@
 .testimonials .section__title {
-  margin-bottom: 15px;
+  font-family: "Markazi Text", serif;
+  font-weight: normal;
+  font-size: 40px;
 }
 
 .testimonials .section__subtitle {
