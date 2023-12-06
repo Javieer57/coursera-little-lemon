@@ -37,7 +37,7 @@ const NavbarLinks = ({ isOpen, setIsOpen }) => {
   return (
     <ul className={`navbar-nav ${isOpen ? "active" : ""}`}>
       {links.map((link) => (
-        <li>
+        <li key={link.text}>
           <a href={link.href} className="nav-link" onClick={toggleMenu}>
             {link.text}
           </a>

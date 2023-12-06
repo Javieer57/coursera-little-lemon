@@ -2,7 +2,7 @@ import "./Specials.css";
 import MealCard from "./MealCard";
 import Meals from "../mock/meals.json";
 
-const Specials = () => {
+export const Specials = () => {
   return (
     <section className="section-specials">
       <div className="section__header">
@@ -18,5 +18,3 @@ const Specials = () => {
     </section>
   );
 };
-
-export default Specials;
