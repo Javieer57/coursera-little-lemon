@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./Hero.css";
 
 export const Hero = () => {
@@ -13,10 +14,10 @@ export const Hero = () => {
           obcaecati. Ipsa fuga quaerat minima quis at exercitationem nulla
         </p>
 
-        <button className="btn btn-primary btn-icon">
+        <Link to="/booking" className="btn btn-primary btn-icon">
           <img src="./icons/menu.svg" alt="" />
           <span>Reserve a table</span>
-        </button>
+        </Link>
       </div>
 
       <div className="hero-right">
