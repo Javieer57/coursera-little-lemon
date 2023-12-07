@@ -15,17 +15,13 @@ export const Hero = () => {
         </p>
 
         <Link to="/booking" className="btn btn-primary btn-icon">
-          <img
-            src="./icons/menu.svg"
-            alt="menu icon
-          "
-          />
+          <img src="./icons/menu.svg" alt="menu icon" />
           <span>Reserve a table</span>
         </Link>
       </div>
 
       <div className="hero-right">
-        <img src="./img/restaurant-food.jpg" />
+        <img src="./img/restaurant-food.jpg" alt="restaurant food" />
       </div>
     </section>
   );
