@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import "./BookingForm.css";
 
-export const BookingForm = () => {
+export const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
   const [formData, setFormData] = useState({
     date: "",
     time: "",
-    guests: 1,
+    guests: 0,
     occasion: "Birthday",
   });
-
   const [errorMessage, setErrorMessage] = useState("");
-
   const [isSubmitDisabled, setIsSubmitDisabled] = useState(true);
 
   const handleInputChange = (id, value) => {
@@ -20,6 +18,8 @@ export const BookingForm = () => {
     }));
 
     if (id === "date") {
+      dispatchAvailableTimes({ type: "SET_TIMES", payload: value });
+
       const selectedDate = new Date(value + "T00:00:00");
       const today = new Date();
 
@@ -35,6 +35,14 @@ export const BookingForm = () => {
         setIsSubmitDisabled(false);
       }
     }
+
+    const isFormFilled =
+      formData.date !== "" &&
+      formData.time !== "" &&
+      formData.guests === 0 &&
+      formData.occasion !== "";
+
+    setIsSubmitDisabled(!isFormFilled);
   };
 
   const handleSubmit = (e) => {
@@ -60,6 +68,7 @@ export const BookingForm = () => {
         <TimeInput
           value={formData.time}
           onChange={(value) => handleInputChange("time", value)}
+          availableTimes={availableTimes}
         />
 
         <GuestsInput
@@ -103,9 +112,7 @@ const DateInput = ({ value, onChange }) => {
   );
 };
 
-const TimeInput = ({ value, onChange }) => {
-  const availableTimes = ["17:00", "18:00", "19:00", "20:00", "21:00", "22:00"];
-
+const TimeInput = ({ value, onChange, availableTimes }) => {
   const handleTimeChange = (e) => {
     onChange(e.target.value);
   };
