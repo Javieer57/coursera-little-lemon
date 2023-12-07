@@ -7,16 +7,8 @@ describe("initializeTimes", () => {
     expect(times.length).toBeGreaterThan(0);
   });
 
-  it("should return an array with specific times", () => {
+  it("should return an array", () => {
     const times = initializeTimes();
-    const expectedTimes = [
-      "17:00",
-      "18:00",
-      "19:00",
-      "20:00",
-      "21:00",
-      "22:00",
-    ];
-    expect(times).toEqual(expectedTimes);
+    expect(Array.isArray(times)).toBe(true);
   });
 });

@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./BookingForm.css";
 
-export const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
+export const BookingForm = ({
+  availableTimes,
+  dispatchAvailableTimes,
+  handleSubmit,
+  loading,
+}) => {
   const [formData, setFormData] = useState({
     date: "",
     time: "",
@@ -35,28 +40,37 @@ export const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
         setIsSubmitDisabled(false);
       }
     }
+  };
 
+  useEffect(() => {
     const isFormFilled =
       formData.date !== "" &&
+      errorMessage === "" &&
       formData.time !== "" &&
-      formData.guests === 0 &&
+      formData.guests !== 0 &&
       formData.occasion !== "";
 
     setIsSubmitDisabled(!isFormFilled);
-  };
+  }, [formData, errorMessage]);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (e.target.checkValidity()) {
-      console.log(formData);
-    } else {
-      console.log("Please fill in all fields.");
+  useEffect(() => {
+    if (loading) {
+      setIsSubmitDisabled(true);
     }
-  };
+  }, [loading]);
+
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   if (e.target.checkValidity()) {
+  //     console.log(formData);
+  //   } else {
+  //     console.log("Please fill in all fields.");
+  //   }
+  // };
 
   return (
-    <div className="booking">
-      <h2>Book a table</h2>
+    <section className="booking">
+      <h1>Book a table</h1>
 
       <form className="booking__form" onSubmit={handleSubmit}>
         <DateInput
@@ -86,10 +100,10 @@ export const BookingForm = ({ availableTimes, dispatchAvailableTimes }) => {
           type="submit"
           disabled={isSubmitDisabled}
         >
-          Make Your reservation
+          {loading ? "Loading..." : "Make Your reservation"}
         </button>
       </form>
-    </div>
+    </section>
   );
 };
 
