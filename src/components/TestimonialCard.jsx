@@ -11,7 +11,7 @@ export const TestimonialCard = ({ testimonial }) => {
         {Array(testimonial.rating)
           .fill(0)
           .map((_, index) => (
-            <FontAwesomeIcon icon={faStar} color="var(--yellow)" />
+            <FontAwesomeIcon icon={faStar} color="var(--yellow)" key={index} />
           ))}
       </div>
 

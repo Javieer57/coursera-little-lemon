@@ -1,17 +1,13 @@
 import Footer from "./components/Footer";
 import { Header } from "./components/Header";
-import { Hero } from "./components/Hero";
-import Specials from "./components/Specials";
-import { Testimonials } from "./components/Testimonials";
+import { Outlet } from "react-router-dom";
 
 function App() {
   return (
     <>
       <Header />
       <main className="container">
-        <Hero />
-        <Specials />
-        <Testimonials />
+        <Outlet />
       </main>
       <Footer />
     </>
