@@ -21,7 +21,7 @@ export const TestimonialCard = ({ testimonial }) => {
         <div className="customer__avatar">
           <img
             src={testimonial.customer.avatar}
-            alt="customer image"
+            alt="avatar"
             width="100"
             loading="lazy"
           />

@@ -15,7 +15,11 @@ export const Hero = () => {
         </p>
 
         <Link to="/booking" className="btn btn-primary btn-icon">
-          <img src="./icons/menu.svg" alt="" />
+          <img
+            src="./icons/menu.svg"
+            alt="menu icon
+          "
+          />
           <span>Reserve a table</span>
         </Link>
       </div>

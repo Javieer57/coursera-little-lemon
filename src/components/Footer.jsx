@@ -27,14 +27,6 @@ const socials = [
   { icon: faYoutube, name: "youtube" },
 ];
 
-const links = [
-  { href: "#home", text: "Home" },
-  { href: "#about", text: "About" },
-  { href: "#services", text: "Services" },
-  { href: "#menu", text: "Our Menu" },
-  { href: "#testimonials", text: "Testimonials" },
-];
-
 const Footer = () => {
   return (
     <footer className="footer">
