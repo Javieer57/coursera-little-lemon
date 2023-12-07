@@ -13,10 +13,10 @@ const MealCard = ({ meal }) => {
           {meal.name} <span>{meal.price}</span>
         </h3>
         <p>{meal.description}</p>
-        <a href="" className="meal-card__link">
+        <span href="" className="meal-card__link">
           Order a delivery
           <FontAwesomeIcon icon={faPersonBiking} />
-        </a>
+        </span>
       </div>
     </article>
   );

@@ -11,6 +11,8 @@ import {
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import "./Footer.css";
+import NavLinks from "../mock/NavLinks";
+import { Link } from "react-router-dom";
 
 const contacts = [
   { icon: faLocationDot, info: "678 Pisa Ave, Chicago, IL 60611" },
@@ -45,9 +47,9 @@ const Footer = () => {
         <nav className="footer__nav">
           <h4>Sitemap</h4>
           <ul>
-            {links.map((navLink, index) => (
+            {NavLinks.map((navLink, index) => (
               <li key={index}>
-                <a href="">{navLink.text}</a>
+                <Link to={navLink.href}>{navLink.text}</Link>
               </li>
             ))}
           </ul>
@@ -67,14 +69,9 @@ const Footer = () => {
         <div className="footer__social">
           <h4>Connect with us</h4>
           {socials.map((social, index) => (
-            <a
-              key={index}
-              href={`https://www.${social.name}.com`}
-              target="_blank"
-              rel="noreferrer"
-            >
+            <Link key={index} to={`https://www.${social.name}.com`}>
               <FontAwesomeIcon icon={social.icon} size="lg" />
-            </a>
+            </Link>
           ))}
         </div>
       </div>

@@ -1,5 +1,7 @@
 import { useState } from "react";
 import "./Header.css";
+import { Link } from "react-router-dom";
+import NavLinks from "../mock/NavLinks";
 
 export const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -8,9 +10,9 @@ export const Header = () => {
     <header>
       <nav className="navbar">
         <div className="navbar-wrapper">
-          <a href="#">
+          <Link to="/" className="navbar-brand">
             <img src="/img/logo.png" alt="logo" width="130" />
-          </a>
+          </Link>
 
           <NavbarLinks isOpen={isOpen} setIsOpen={setIsOpen} />
 
@@ -22,25 +24,17 @@ export const Header = () => {
 };
 
 const NavbarLinks = ({ isOpen, setIsOpen }) => {
-  const links = [
-    { href: "#home", text: "Home" },
-    { href: "#about", text: "About" },
-    { href: "#services", text: "Services" },
-    { href: "#menu", text: "Our Menu" },
-    { href: "#testimonials", text: "Testimonials" },
-  ];
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   return (
     <ul className={`navbar-nav ${isOpen ? "active" : ""}`}>
-      {links.map((link) => (
+      {NavLinks.map((link) => (
         <li key={link.text}>
-          <a href={link.href} className="nav-link" onClick={toggleMenu}>
+          <Link to={link.href} className="nav-link" onClick={toggleMenu}>
             {link.text}
-          </a>
+          </Link>
         </li>
       ))}
     </ul>
